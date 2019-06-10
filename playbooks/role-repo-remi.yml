@@ -1,0 +1,6 @@
+---
+- name: ntp config
+  hosts: centos7
+  become: true
+  roles:
+    - { role: roles/role-repo-remi }

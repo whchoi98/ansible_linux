@@ -1,0 +1,62 @@
+---
+# tasks file for role-yum-install
+- name: install the latest version of "net-tools"
+  yum: 
+    name: net-tools
+    state: present
+- name: install the latest version of "bind-utils"
+  yum: 
+    name: bind-utils
+    state: present
+- name: install the latest version of "vim"
+  yum: 
+    name: vim
+    state: present
+- name: install the latest version of "wget"
+  yum: 
+    name: wget
+    state: present
+- name: install the latest version of "iotop"
+  yum: 
+    name: iotop
+    state: present
+- name: install the latest version of "iperf3"
+  yum: 
+    name: iperf3
+    state: present
+
+- name: install the latest version of  "htop"
+  yum:
+    name: "htop"
+    enablerepo: epel
+    state: present
+
+- name: install the latest version of "nethogs"
+  yum:
+    name: "nethogs"
+    enablerepo: epel
+    state: present
+
+- name: iinstall the latest version of  "iftop"
+  yum:
+    name: "iftop"
+    enablerepo: epel
+    state: present
+
+- name: install the latest version of  "vnstat"
+  yum:
+    name: "vnstat"
+    enablerepo: epel
+    state: present
+
+- name: install the latest version of "nmon"
+  yum:
+    name: "nmon"
+    enablerepo: epel
+    state: present
+
+- name: install the lastes version of "lnav"
+  yum:
+    name: "lnav"
+    enablerepo: epel
+    state: present

@@ -1,0 +1,11 @@
+---
+- name: CentOS7 basic install
+  hosts: centos7
+  become: true
+  roles:
+    - { role: roles/role-ntp }
+    - { role: roles/role-yum-update }
+    - { role: roles/role-repo-remi }
+    - { role: roles/role-repo-epel }
+    - { role: roles/role-yum-install}
+    - { role: roles/role-yum-update }

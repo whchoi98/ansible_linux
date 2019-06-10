@@ -1,0 +1,12 @@
+---
+# defaults file for role-repo-local
+repos: http://centrepo.cisko-dc.com
+repo_config: True
+origin_repo: 
+#  - CentOS-Base.repo
+#  - CentOS-Vault.repo
+  - CentOS-Sources.repo
+  - CentOS-CR.repo
+  - CentOS-Debuginfo.repo
+  - CentOS-fasttrack.repo
+  - CentOS-Media.repo

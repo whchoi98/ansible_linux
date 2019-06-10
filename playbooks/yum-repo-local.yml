@@ -1,0 +1,36 @@
+---
+- hosts: all
+  
+  vars:
+
+    origin_repo:
+      - CentOS-Base.repo
+      - CentOS-CR.repo
+      - CentOS-Debuginfo.repo
+      - CentOS-Media.repo
+      - CentOS-Sources.repo
+      - CentOS-Vault.repo
+      - CentOS-fasttrack.repo
+
+  tasks:
+    - name: create directory for the local-repo 
+      file:
+        path: /tmp/repo_backup
+        state: directory
+
+    - name: copy origin repo
+      copy:
+        src: /etc/yum.repos.d/{{item}}
+        dest: /tmp/repo_backup/
+        remote_src: yes
+      with_items: "{{origin_repo}}"
+
+    - name: delete origin repo
+      file:
+        path: /etc/yum.repos.d/{{item}}
+        state: absent
+      with_items: "{{origin_repo}}"
+
+
+
+  

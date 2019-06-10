@@ -1,0 +1,6 @@
+---
+# tasks file for role-yum-update
+- name: Update all packages
+  yum:
+    name: "*"
+    state: latest

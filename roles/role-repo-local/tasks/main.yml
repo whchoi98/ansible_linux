@@ -1,0 +1,34 @@
+---
+# tasks file for role-repo-local
+
+- name: Generate local-repos.repo
+  copy:
+    src: '/Users/woohyungchoi/code/02.ansible/linux/file/local-repos.repo'
+    dest: /etc/yum.repos.d/local-repos.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: file edit for local-repos.repo
+  template:
+    src: local-repos.j2
+    dest: /etc/yum.repos.d/local-repos.repo
+  when: repo_config
+
+- name: create directory for the local-repo 
+  file:
+    path: /tmp/repo_backup
+    state: directory
+
+- name: copy origin repo
+  copy:
+    src: /etc/yum.repos.d/{{item}}
+    dest: /tmp/repo_backup/
+    remote_src: yes
+  with_items: "{{origin_repo}}"
+
+- name: delete origin repo
+  file:
+    path: /etc/yum.repos.d/{{item}}
+    state: absent
+  with_items: "{{origin_repo}}"

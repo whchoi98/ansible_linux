@@ -1,0 +1,77 @@
+---
+- hosts: all
+  tasks:    
+  - name: install the latest version of "net-tools"
+    yum: 
+      name: net-tools
+      state: present
+
+  - name: install the latest version of "bind-utils"
+    yum: 
+      name: bind-utils
+      state: present
+
+  - name: install the latest version of "vim"
+    yum: 
+      name: vim
+      state: present
+
+  - name: install the latest version of "wget"
+    yum: 
+      name: wget
+      state: present
+
+  - name: install the latest version of "iotop"
+    yum: 
+      name: iotop
+      state: present
+
+  - name: install the latest version of "iperf3"
+    yum: 
+      name: iperf3
+      state: present
+
+  - name: install the latest version of "iptraf"
+    yum: 
+      name: iptraf
+      state: present
+
+  - name: install the latest version of "vsftpd"
+    yum: 
+      name: vsftpd
+      state: present
+
+  - name: install the latest version of "ftp"
+    yum: 
+      name: ftp
+      state: present
+
+  - name: install the latest version of "tcpdump"
+    yum: 
+      name: tcpdump
+      state: present
+
+  - name: install the latest version of "htop"
+    yum: 
+      name: htop
+      enablerepo: epel
+      state: present
+
+
+# Multiful Package install
+#    yum:
+#      name: 
+#        - net-tools
+#        - bind-utils
+#        - vim
+#        - wget
+#        - ntp
+#        - iotop
+#        - iperf3
+#        - iptraf
+#        - vsftpd
+#        - ftp
+#        - tcpdump        
+#      state: present
+
+# Reference Site : https://docs.ansible.com/ansible/latest/modules/yum_module.html?highlight=yum
